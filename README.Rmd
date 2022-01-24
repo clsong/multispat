@@ -43,8 +43,9 @@ gamma <- 3
 # set species associations
 spatial_association <- matrix(NA, nrow = gamma, ncol = gamma)
 diag(spatial_association) <- 0
+spatial_association[1, 1] <- -.4 
 spatial_association[1, 2] <- -.8
-spatial_association[1, 3] <- 0.7
+spatial_association[1, 3] <- 0.3
 spatial_association[2, 3] <- 0.7
 spatial_association[lower.tri(spatial_association)] <- t(spatial_association)[lower.tri(spatial_association)]
  
