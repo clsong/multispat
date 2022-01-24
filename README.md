@@ -1,18 +1,14 @@
-
 # multispat
 
 <!-- badges: start -->
 <!-- badges: end -->
-
-The goal of multispat is to ...
 
 ## Installation
 
 You can install the development version of multispat like so:
 
 ``` r
-library(devtools)
-install_github("clsong/multispat")
+remotes::install_github("clsong/multispat")
 ```
 
 ## Example
@@ -81,6 +77,5 @@ gamma <- 3
    theme(
      aspect.ratio = 1
    )
-
 ```
 
