@@ -2,23 +2,7 @@
 % Please edit documentation in R/plot_spatial_association.R
 \name{plot_spatial_association}
 \alias{plot_spatial_association}
-\title{#' @import DiagrammeR
-plot_spatial_association_DiagrammeR <- function(spatial_association){
-length <- .8
-n <- tibble(
-node = LETTERS\link{1:gamma}
-) \%>\%
-mutate(
-label = node
-) \%>\%
-rename(
-id = node
-) \%>\%
-mutate(
-width = .3,
-height = .3,
-alpha = 354.91
-)}
+\title{Plot the spatial associations}
 \usage{
 plot_spatial_association(spatial_association)
 }
@@ -29,42 +13,5 @@ plot_spatial_association(spatial_association)
 A graph visualizing spatial associations
 }
 \description{
-e <- spatial_association \%>\%
-as.table() \%>\%
-as.data.frame() \%>\%
-transmute(
-from = Var1,
-to = Var2,
-weight = Freq
-) \%>\%
-mutate(
-association = case_when(
-weight > 0 ~ "attractive",
-weight == 0 ~ "null",
-weight < 0 ~ "repulsive"
-)
-) \%>\%
-filter(
-match(from, LETTERS\link{1:gamma}) <= match(to, LETTERS\link{1:gamma})
-) \%>\%
-mutate(from = factor(from), to = factor(to)) \%>\%
-mutate(color = case_when(
-association == 'null' ~ "gray",
-association == 'repulsive' ~ "#4594B8",
-association == 'attractive' ~ "#8E5750",
-TRUE ~ 'white'))  \%>\%
-mutate(arrowhead = case_when(
-weight < 0 ~ "inv",
-weight == 0 ~ "none",
-weight > 0 ~ "normal"
-)) \%>\%
-mutate(
-arrowtail = arrowhead,
-fontcolor = color,
-dir = 'both',
-penwidth = ifelse(weight == 0, .5,  abs(weight)),
-label = weight)
-}
-\details{
-
+Plot the spatial associations
 }

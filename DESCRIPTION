@@ -14,10 +14,10 @@ Imports:
     fields,
     ggplot2,
     ggraph,
+    tidygraph,
     purrr,
     stringr,
     testthat (>= 3.0.0),
-    tidygraph,
     tidyr,
     jtools,
     magrittr
