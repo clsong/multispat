@@ -50,7 +50,8 @@ p2 <- df %>%
   geom_point() +
   theme_minimal() +
   theme(
-    aspect.ratio = 1
+    aspect.ratio = 1,
+    legend.position = 'bottom'
   )
 
 library(patchwork)
