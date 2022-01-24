@@ -55,7 +55,7 @@ p2 <- df %>%
   )
 
 library(patchwork)
-p1 + p2
+p1 + p2 + plot_annotation(tag_levels = 'A')
 ```
 
 <img src="man/figures/README-example-1.png" width="100%" />
