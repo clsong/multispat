@@ -34,7 +34,7 @@ devtools::install_github("clsong/multispat")
 This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
-library(tidyverse)
+suppressPackageStartupMessages(library(tidyverse))
 library(multispat)
 
 # set total number of species
