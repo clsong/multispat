@@ -80,7 +80,7 @@
 
 #' Plot the spatial associations
 #'
-#' @import ggraph tidygraph
+#' @import ggraph tidygraph stringr
 #' @return A graph visualizing spatial associations
 #' @param spatial_association a matrix with elements encoding the strength of species associations. Strength in (0, 1) indicates attraction, = 0 indicates null relationship, in (-1, 0) indicates repulsion
 #' @export
@@ -104,9 +104,9 @@ plot_spatial_association <- function(spatial_association){
     mutate(
       transparency = ifelse(weight == 0, 1, abs(weight))
     ) %>%
-    filter(
-      match(from, LETTERS[1:gamma]) <= match(to, LETTERS[1:gamma])
-    ) %>%
+    # filter(
+    #   match(from, LETTERS[1:gamma]) <= match(to, LETTERS[1:gamma])
+    # ) %>%
     as_tbl_graph() %>%
     ggraph(layout = 'linear', circular = TRUE) +
     geom_edge_link(aes(color = association,
