@@ -50,18 +50,21 @@ spatial_association[2, 3] <- 0.7
 spatial_association[lower.tri(spatial_association)] <- t(spatial_association)[lower.tri(spatial_association)]
  
 # Visualize the spatial associations
-plot_spatial_association(spatial_association)
+p1 <- plot_spatial_association(spatial_association)
 
 # Simulate the given point processes
 df <- simulate_point_process(spatial_association, gamma, radius = .2)
 
 # plot the spatial pattern
-df %>%
+p2 <- df %>%
   ggplot(aes(x, y, color = species)) +
   geom_point() +
   theme_minimal() +
   theme(
     aspect.ratio = 1
   )
+
+library(patchwork)
+p1 + p2
 ```
 
