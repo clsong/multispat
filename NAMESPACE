@@ -3,7 +3,6 @@
 export("%>%")
 export(plot_spatial_association)
 export(sample_spatial_point)
-import(DiagrammeR)
 import(ggraph)
 import(tidygraph)
 importFrom(magrittr,"%>%")
