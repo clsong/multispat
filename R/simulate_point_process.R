@@ -11,7 +11,7 @@ simulate_point_process <- function(spatial_association,
                                    gamma,
                                    radius,
                                    num_candidates = 1000,
-                                   Nsteps = 50
+                                   Npoints = 50
                                    ) {
   # initialize species locations
   num_initial <- 2
@@ -25,7 +25,7 @@ simulate_point_process <- function(spatial_association,
   }
 
   # Number of simulated points
-  for (i in 1:Nsteps) {
+  for (i in 1:Npoints) {
     invader <- i %% gamma + 1
 
     winner <- sample_spatial_point(

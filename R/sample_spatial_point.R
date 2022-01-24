@@ -17,10 +17,20 @@ sample_spatial_point <- function(species_location,
   candidates <- matrix(runif(2 * num_candidates, min = 0, max = 1),
     nrow = num_candidates, ncol = 2
   )
+  if(length(radius) == 1){
+    distances <- species_location %>%
+      map(~ fields::rdist(candidates, .)) %>%
+      map(~ apply(., 1, function(x) sum(x < radius)))
+  } else if(length(radius) == gamma){
+    distances <- species_location %>%
+      map(~ fields::rdist(candidates, .))
+    distances <- 1:gamma %>%
+      map(function(x){
+        1:num_candidates %>%
+          map_dbl(~sum(distances[[x]][.,] < radius[x]))
+      })
+  }
 
-  distances <- species_location %>%
-    map(~ fields::rdist(candidates, .)) %>%
-    map(~ apply(., 1, function(x) sum(x < radius)))
   weights <- spatial_association[invading_species, ] %>%
     {
       tan(pi / 2 * .)
