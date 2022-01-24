@@ -13,6 +13,17 @@ sample_spatial_point(
   radius
 )
 }
+\arguments{
+\item{species_location}{a tibble with the locations of species samples}
+
+\item{spatial_association}{a matrix with elements encoding the strength of species associations. Strength in (0, 1) indicates attraction, = 0 indicates null relationship, in (-1, 0) indicates repulsion}
+
+\item{gamma}{the gamma diversity}
+
+\item{invading_species}{the label of species to sample (an integer between 1 to gamma)}
+
+\item{num_candidates}{the number of candidate points that the sample can}
+}
 \description{
 Generate a new spatial location for a given species
 }

@@ -1,10 +1,10 @@
 #' Generate a new spatial location for a given species
 #'
-#' @species_location a tibble with the locations of species samples
-#' @spatial_association a matrix with elements encoding the strength of species associations. Strength in (0, 1) indicates attraction, = 0 indicates null relationship, in (-1, 0) indicates repulsion
-#' @gamma the gamma diversity
-#' @invading_species the label of species to sample (an integer between 1 to gamma)
-#' @num_candidates the number of candidate points that the sample can
+#' @param species_location a tibble with the locations of species samples
+#' @param spatial_association a matrix with elements encoding the strength of species associations. Strength in (0, 1) indicates attraction, = 0 indicates null relationship, in (-1, 0) indicates repulsion
+#' @param gamma the gamma diversity
+#' @param invading_species the label of species to sample (an integer between 1 to gamma)
+#' @param num_candidates the number of candidate points that the sample can
 #' @export
 sample_spatial_point <- function(species_location,
                                  spatial_association,

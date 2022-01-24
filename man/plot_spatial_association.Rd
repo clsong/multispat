@@ -22,6 +22,9 @@ alpha = 354.91
 \usage{
 plot_spatial_association(spatial_association)
 }
+\arguments{
+\item{spatial_association}{a matrix with elements encoding the strength of species associations. Strength in (0, 1) indicates attraction, = 0 indicates null relationship, in (-1, 0) indicates repulsion}
+}
 \value{
 A graph visualizing spatial associations
 }

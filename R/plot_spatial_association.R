@@ -80,13 +80,13 @@
 
 #' Plot the spatial associations
 #'
-#' @return A graph visualizing spatial associations
-#' @spatial_association a matrix with elements encoding the strength of species associations. Strength in (0, 1) indicates attraction, = 0 indicates null relationship, in (-1, 0) indicates repulsion
-#' @plot_type Either using the package ggraph or DiagrammR
-#' @export
 #' @import ggraph tidygraph
+#' @return A graph visualizing spatial associations
+#' @param spatial_association a matrix with elements encoding the strength of species associations. Strength in (0, 1) indicates attraction, = 0 indicates null relationship, in (-1, 0) indicates repulsion
+#' @export
+
 plot_spatial_association <- function(spatial_association){
-  spatial_association %>%
+  p <- spatial_association %>%
     as.table() %>%
     as.data.frame() %>%
     transmute(
@@ -134,4 +134,5 @@ plot_spatial_association <- function(spatial_association){
       legend.position = 'bottom',
       legend.text=element_text(size=12)
     )
+  p
 }
