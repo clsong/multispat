@@ -22,5 +22,5 @@ Imports:
     tidyr,
     magrittr
 Config/testthat/edition: 3
-
-    
+URL: https://github.com/clsong/multispat
+BugReports: https://github.com/clsong/multispat/issues
