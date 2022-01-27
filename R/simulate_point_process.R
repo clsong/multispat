@@ -11,7 +11,8 @@ simulate_point_process <- function(spatial_association,
                                    gamma,
                                    radius,
                                    num_candidates = 1000,
-                                   Npoints = 50
+                                   Npoints = 50,
+                                   count_max = 10
                                    ) {
   # initialize species locations
   num_initial <- 2
@@ -34,7 +35,8 @@ simulate_point_process <- function(spatial_association,
       gamma,
       invading_species = invader,
       num_candidates,
-      radius
+      radius,
+      count_max
     )
     species_location[[invader]] <- species_location[[invader]] %>%
       rbind(winner)

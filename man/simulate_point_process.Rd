@@ -9,7 +9,8 @@ simulate_point_process(
   gamma,
   radius,
   num_candidates = 1000,
-  Npoints = 50
+  Npoints = 50,
+  count_max = 10
 )
 }
 \arguments{

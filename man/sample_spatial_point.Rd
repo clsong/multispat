@@ -10,7 +10,8 @@ sample_spatial_point(
   gamma,
   invading_species,
   num_candidates,
-  radius
+  radius,
+  count_max
 )
 }
 \arguments{
